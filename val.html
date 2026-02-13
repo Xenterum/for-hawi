@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Dearest Hawi| Valentine 2026</title>
+    <link rel="stylesheet" href="val.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="petal-container"></div>
+    
+    <div class="music-player" id="player-ui">
+        <div class="music-info">
+            <span class="music-icon">🎵</span>
+            <span class="song-name">Sunsetz - CAS</span>
+        </div>
+        <button class="play-btn" onclick="toggleMusic()">❤</button>
+        <audio id="bg-audio" loop>
+            <source src="sunsetz.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="background-overlay"></div>
+    <div id="heart-container"></div>
+
+    <section id="proposal-section" class="scene active">
+        <div class="main-card proposal-card">
+            <div class="floating-elements">
+                <span class="float-heart">💖</span>
+                <span class="float-heart">✨</span>
+            </div>
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW9ueW9ueW9ueW9ueW9ueW9ueW9ueW9ueW9ueW9ueW9ueSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute Bear" class="responsive-gif">
+            <h1 class="glow-text">Hawi Baby, will you be my valentine?</h1>
+            <p class="sub-text">I have a million reasons why it should be yes...</p>
+            <div class="action-buttons">
+                <button id="yesBtn" class="primary-btn" onclick="celebrateAndMove()">YES! ❤️</button>
+                <button id="noBtn" class="secondary-btn" onclick="handleNoHover()">NO</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu-section" class="scene hidden">
+        <div class="main-card wide-card">
+            <h1 class="bounce-in">Yay! You made me the happiest! 🥰</h1>
+            <div class="menu-grid">
+                <div class="grid-item card-pop" onclick="loadContent(0)">
+                    <div class="icon-circle">🏪</div>
+                    <h3>Our Story</h3>
+                    <p>Where it all began...</p>
+                </div>
+                <div class="grid-item card-pop" onclick="startLetterSequence()">
+                    <div class="icon-circle">💌</div>
+                    <h3>Love Letter</h3>
+                    <p>From my heart to yours</p>
+                </div>
+                <div class="grid-item card-pop" onclick="loadContent(1)">
+                    <div class="icon-circle">🎁</div>
+                    <h3>My Promise</h3>
+                    <p>Always and forever</p>
+                </div>
+                <div class="grid-item card-pop" onclick="loadContent(2)">
+                    <div class="icon-circle">💐</div>
+                    <h3>Virtual Bouquet</h3>
+                    <p>Never withering love</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content-section" class="scene hidden">
+        <div class="main-card content-card">
+            <h2 id="display-title" class="slide-up-text"></h2>
+            <div class="photo-display-container">
+                <div class="polaroid">
+                    <div class="photo-inner-wrapper" id="photo-target">
+                        <div class="img-skeleton">Loading memory...</div>
+                    </div>
+                    <div class="polaroid-caption">Forever & Always</div>
+                </div>
+            </div>
+            <div class="text-bubble-container">
+                <p id="display-description"></p>
+            </div>
+            <button class="nav-btn" onclick="switchScene('menu-section')">Back to My Heart</button>
+        </div>
+    </section>
+
+    <section id="letter-section" class="scene hidden">
+        <div class="main-card letter-card">
+            <div class="letter-paper">
+                <h2>Dearest Hawi,</h2>
+                <div id="typewriter-area" class="typewriter-text"></div>
+                <div id="letter-footer" class="hidden-fade" style="opacity: 0; transition: opacity 1s;">
+                    <p>Yours truly, <br> <span class="signature">[Rafeal]</span></p>
+                </div>
+            </div>
+            <button id="letter-back-btn" class="nav-btn hidden" onclick="switchScene('menu-section')">Back to Menu</button>
+        </div>
+    </section>
+
+    <script src="val.js"></script>
+</body>
+</html>
